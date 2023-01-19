@@ -5,14 +5,14 @@
  * @returns {object} - returns the new object
  */
 export const pick = (obj, ...fields) => {
-  let fruits2 = {}
+  const resultObj = {}
 
-  for (let [key, value] of Object.entries(obj)) {
-    for (let arg of [...fields]) {
+  for (const [key, value] of Object.entries(obj)) {
+    for (let arg of fields) {
       if (key === arg) {
-        fruits2[key] = value
+        resultObj[key] = value
       }
     }
   }
-  return fruits2
+  return resultObj
 };
