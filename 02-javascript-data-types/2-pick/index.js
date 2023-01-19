@@ -9,7 +9,7 @@ export const pick = (obj, ...fields) => {
 
   for (const [key, value] of Object.entries(obj)) {
     for (let arg of fields) {
-      if (key === arg) {
+      if (key.includes(arg)) {
         resultObj[key] = value
       }
     }
