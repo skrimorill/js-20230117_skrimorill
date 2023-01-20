@@ -8,10 +8,8 @@ export const pick = (obj, ...fields) => {
   const resultObj = {}
 
   for (const [key, value] of Object.entries(obj)) {
-    for (let arg of fields) {
-      if (key.includes(arg)) {
-        resultObj[key] = value
-      }
+    if (fields.includes(key)) {
+      resultObj[key] = value
     }
   }
   return resultObj
