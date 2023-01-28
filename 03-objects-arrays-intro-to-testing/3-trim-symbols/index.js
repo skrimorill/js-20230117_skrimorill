@@ -5,20 +5,22 @@
  * @returns {string} - the new string without extra symbols according passed size
  */
 export function trimSymbols(string, size) {
+    let count = 0
     const resultStr = []
-    let str = string
-    .split('')
-    .reduce((acc, el) => {
-        acc[el] = (acc[el] || 0) + 1
-        return acc
-    }, {})
 
-    for (const [key, value] of Object.entries(str)) {
-        if (value > size) {
-            resultStr.push(key.repeat(size))
-        } else {
-            resultStr.push(key.repeat(value))
+    if (size === 0) return ''
+    if (size === undefined) return string
+
+    for (const item of string) {
+      if (resultStr.at(-1) === item) {
+        if (count < size) {
+          resultStr.push(item)
+          count += 1
         }
+      } else {
+        count = 1 
+        resultStr.push(item)
+      } 
     }
-        return resultStr.join('')
+      return resultStr.join('')
 }
