@@ -5,4 +5,16 @@
  */
 export function createGetter(path) {
 
+    const resultField = path.split('.')
+    
+    return function(obj) {
+    let value = obj
+    
+    for (const elem of resultField) {
+            if (typeof value === 'object') {
+                value = value[elem]
+            }
+    }
+    return value;
+    }
 }
