@@ -8,13 +8,13 @@ export function createGetter(path) {
     const resultField = path.split('.')
     
     return function(obj) {
+
+    if (!Object.keys(obj).length) return
+        
     let value = obj
-    
     for (const elem of resultField) {
-            if (typeof value === 'object') {
-                value = value[elem]
-            }
-    }
+        value = value[elem]
+      }
     return value;
     }
 }
