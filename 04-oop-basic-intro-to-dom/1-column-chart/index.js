@@ -20,7 +20,7 @@ export default class ColumnChart {
     const chartLoading = this.hasData() ? "" : "column-chart_loading"
 
     return `
-    <div class="column-chart ${chartLoading}"" style="--chart-height: 50">
+    <div class="column-chart ${chartLoading}" "style="--chart-height: 50">
         <div class='column-chart__title'>
         Total ${this.label}
         ${this.getLink()}
@@ -83,10 +83,5 @@ export default class ColumnChart {
 
 
 
-const ordersChart = new ColumnChart() 
-
-const salesChart = new ColumnChart() 
-
-const customersChart = new ColumnChart()
 
 
