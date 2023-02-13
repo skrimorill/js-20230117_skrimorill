@@ -4,6 +4,8 @@ const BACKEND_URL = 'https://course-js.javascript.ru';
 
 export default class ColumnChart {
   static isloading = 'column-chart_loading';
+  chartHeight = 50;
+
   constructor({
     url = '',
     range = {},
@@ -17,7 +19,6 @@ export default class ColumnChart {
     this.value = 0;
     this.link = link;
     this.formatHeading = formatHeading;
-    this.chartHeight = 50;
 
     this.render();
     this.update(range.from, range.to);
