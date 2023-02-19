@@ -12,9 +12,8 @@ export default class SortableTable {
 
   constructor(headersConfig, {
     data = [],
-    sorted = {}
-    url = '',
     sorted = {},
+    url = '',
     isSortLocally = false
   } = {}) {
     this.headersConfig = headersConfig
@@ -223,6 +222,7 @@ export default class SortableTable {
 
     this.subElements.header.removeEventListener("pointerdown", this.onClickHeader)
     window.removeEventListener('scroll', this.onScroll)
+    }
   }
-}
+  }
 }
