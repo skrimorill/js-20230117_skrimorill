@@ -2,6 +2,8 @@ class Tooltip {
 
   static instance
 
+  shear = 10
+
   constructor() {
     if (!Tooltip.instance) {
       Tooltip.instance = this
@@ -17,7 +19,7 @@ class Tooltip {
   
   remove() {
     if (this._element) {
-        this.element.remove()
+      this.element.remove()
     }
   }
 
@@ -53,8 +55,8 @@ class Tooltip {
   }
 
   pointerMove = (event) => {
-    this.element.style.left = event.pageX + 10 + 'px';
-    this.element.style.top =  event.pageY + 10 + 'px';
+    this.element.style.left = event.pageX + shear + 'px';
+    this.element.style.top =  event.pageY + shear + 'px';
   }
 
   get element() {
