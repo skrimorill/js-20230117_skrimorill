@@ -174,11 +174,12 @@ export default class SortableTable {
     }
   }
 
-  sortOnClient (id, order) {
-  get body() {
-    return `<div data-element="body" class="sortable-table__body">
+  
+    get body() {
+      return `<div data-element="body" class="sortable-table__body">
             </div>`
   }
+
 
   getBodyRows(data = this.data) {
     return data.map(x => 
@@ -214,7 +215,7 @@ export default class SortableTable {
     this._subElements = null 
   }
 
-  sortOnServer (id, order) {
+  
   remove() {
     if (this.element) {
       this.element.remove()
@@ -223,6 +224,6 @@ export default class SortableTable {
     this.subElements.header.removeEventListener("pointerdown", this.onClickHeader)
     window.removeEventListener('scroll', this.onScroll)
     }
+  
   }
-  }
-}
+
